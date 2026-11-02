@@ -1,0 +1,216 @@
+/* =====================================================
+   media.css  |  Layout only (mobile-first)
+   Base   : أقل من 576px
+   576px  |  768px  |  992px  |  1200px  |  1400px
+   ===================================================== */
+
+
+/* =====================================================
+   BASE  (أقل من 576px)  -  عمود واحد
+   ===================================================== */
+.container { width: 100%; }
+
+/* ---------- Navbar ---------- */
+.navbar {
+    position: relative;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+}
+.navbar .rightside ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+/* ---------- Header ---------- */
+.header {
+    height: auto;
+    margin-top: 0;
+    padding: 40px 15px;
+}
+.header .container { flex-direction: column; }
+.header .container .header-img { width: 100%; }
+.header .container .header-des {
+    width: 100%;
+    padding: 20px 0 0;
+}
+.header .container .header-des #details {
+    width: auto;
+    padding: 10px 18px;
+}
+.header .container .header-des .price { flex-wrap: wrap; }
+
+/* ---------- Key Features ---------- */
+.key { padding: 20px 15px; }
+.key .hear { width: 100%; }
+.key .container .item { width: 100%; }
+.key .made { width: 100%; }
+
+/* ---------- Reviews ---------- */
+.grand { padding: 20px 15px; }
+.grand .parent1 { width: 100%; }
+.grand .parent2 { width: 100%; }
+.grand .parent2 .lift { width: 100%; }
+.grand .parent2 .right { width: 100%; }
+.grand .parent2 .lift .child1 { position: static; }
+.grand .parent2 .right .child2 .con .sec { width: 100%; }
+.grand .parent2 .right .child2 .con .sec h5 { left: 0; }
+.grand .parent2 .right .child2 .con .sec p { left: 0; }
+.grand .parent2 .right .clc { width: 100%; }
+
+/* ---------- Related Products ---------- */
+.complate { padding: 20px 15px; }
+.complate .comp { width: 100%; }
+.complate .container .set {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+}
+.complate .setup { width: 100%; }
+
+/* ---------- Footer ---------- */
+.footer { padding: 20px 15px; }
+.footer .container .foot1 { width: 100%; }
+.footer .container .foot2 { width: 100%; }
+.footer .container .foot2 .foot2-item { width: 100%; }
+.footer .foot3 {
+    justify-content: center;
+    text-align: center;
+}
+
+
+/* =====================================================
+   576px وأكبر  -  موبايل كبير / تابلت صغير
+   ===================================================== */
+@media (min-width: 576px) {
+    .container { width: 90%; }
+
+    .header { padding: 50px 30px; }
+
+    .key .container .item { width: 50%; }
+    .key .made { width: 90%; }
+
+    .grand .parent2 { width: 90%; }
+
+    .complate .container .set {
+        width: calc(50% - 20px);
+        margin-right: 20px;
+    }
+
+    .footer .container .foot2 .foot2-item { width: 50%; }
+}
+
+
+/* =====================================================
+   768px وأكبر  -  تابلت
+   ===================================================== */
+@media (min-width: 768px) {
+    .header { padding: 60px 30px; }
+
+    .key,
+    .grand,
+    .complate,
+    .footer { padding-left: 40px; padding-right: 40px; }
+
+    .key .hear,
+    .grand .parent1,
+    .complate .comp { width: 75%; }
+
+    .complate .setup { width: 50%; }
+
+    .footer .container .foot2 .foot2-item { width: calc(100% / 3); }
+}
+
+
+/* =====================================================
+   992px وأكبر  -  لابتوب صغير
+   ===================================================== */
+@media (min-width: 992px) {
+    .container { width: 80%; }
+
+    /* Navbar: صف واحد وثابت أعلى الصفحة */
+    .navbar {
+        position: fixed;
+        height: 80px;
+        flex-direction: row;
+        align-items: stretch;
+    }
+    .navbar .rightside ul {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        padding: 0 0 0 40px;
+    }
+
+    /* Header: عمودين */
+    .header {
+        min-height: 100vh;
+        margin-top: 80px;
+        padding: 100px 30px;
+    }
+    .header .container { flex-direction: row; }
+    .header .container .header-img { width: 50%; }
+    .header .container .header-des {
+        width: 50%;
+        padding: 0 20px;
+    }
+
+    /* Key Features: 3 أعمدة */
+    .key .container .item { width: 33.3%; }
+    .key .made { width: 80%; }
+    .key .hear,
+    .grand .parent1,
+    .complate .comp { width: 50%; }
+
+    /* Reviews: عمود جانبي + الآراء */
+    .grand .parent2 { width: 80%; }
+    .grand .parent2 .lift { width: 33.3%; }
+    .grand .parent2 .right { width: 66.7%; }
+    .grand .parent2 .lift .child1 { position: sticky; }
+
+    /* Related Products: 3 أعمدة */
+    .complate .container .set { width: calc((100% / 3) - 20px); }
+
+    /* Footer */
+    .footer .container .foot1 { width: 30%; }
+    .footer .container .foot2 { width: 70%; }
+}
+
+
+/* =====================================================
+   1200px وأكبر  -  لابتوب / ديسكتوب
+   ===================================================== */
+@media (min-width: 1200px) {
+    .header .container .header-des { padding: 0 40px; }
+    .header .container .header-des #details {
+        width: 25%;
+        padding: 10px 0;
+    }
+    .header .container .header-des .price { flex-wrap: nowrap; }
+
+    .grand .parent2 .lift { width: 25%; }
+    .grand .parent2 .right { width: 75%; }
+    .grand .parent2 .right .child2 .con .sec { width: 30%; }
+    .grand .parent2 .right .child2 .con .sec h5 { left: 25%; }
+    .grand .parent2 .right .child2 .con .sec p { left: 50%; }
+    .grand .parent2 .right .clc { width: 50%; }
+
+    .footer .container .foot1 { width: 20%; }
+    .footer .container .foot2 { width: 80%; }
+    .footer .container .foot2 .foot2-item { width: calc(100% / 4); }
+    .footer .foot3 {
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+
+/* =====================================================
+   1400px وأكبر  -  الشاشات الكبيرة
+   ===================================================== */
+@media (min-width: 1400px) {
+    .container,
+    .key .made,
+    .grand .parent2,
+    .footer > div:not(.container) { max-width: 1320px; }
+}
